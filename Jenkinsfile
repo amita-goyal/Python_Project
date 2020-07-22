@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('Performance') {
+      steps {
+        build 'Python_performance'
+      }
+    }
+
   }
 }
