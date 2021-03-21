@@ -15,7 +15,7 @@ pipeline {
 
     stage('Rest Tests') {
       steps {
-        build 'Python_REST_TESTS'
+        build 'Python_API_TESTS'
       }
     }
 
