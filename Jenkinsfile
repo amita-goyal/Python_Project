@@ -7,7 +7,7 @@ pipeline {
       }
     }
 
-    stage('Web Tests') {
+    stage('Different Tests') {
       parallel {
         stage('Web Tests') {
           steps {
@@ -21,18 +21,12 @@ pipeline {
           }
         }
 
-      }
-    }
+        stage('Mobile Tests') {
+          steps {
+            build 'Python_MOBILE_TESTS'
+          }
+        }
 
-    stage('API Tests') {
-      steps {
-        build 'Python_API_TESTS'
-      }
-    }
-
-    stage('Mobile Tests') {
-      steps {
-        build 'Python_MOBILE_TESTS'
       }
     }
 
