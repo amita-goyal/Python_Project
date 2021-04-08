@@ -15,7 +15,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('API tests') {
           steps {
             build 'Python_API_TESTS'
           }
