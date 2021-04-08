@@ -8,8 +8,19 @@ pipeline {
     }
 
     stage('Web Tests') {
-      steps {
-        build 'Python_WEB_TESTS'
+      parallel {
+        stage('Web Tests') {
+          steps {
+            build 'Python_WEB_TESTS'
+          }
+        }
+
+        stage('') {
+          steps {
+            build 'Python_API_TESTS'
+          }
+        }
+
       }
     }
 
