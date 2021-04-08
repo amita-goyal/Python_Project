@@ -27,6 +27,12 @@ pipeline {
           }
         }
 
+        stage('Generate Allure Report') {
+          steps {
+            build 'Python_REPORT_GENERATION'
+          }
+        }
+
       }
     }
 
